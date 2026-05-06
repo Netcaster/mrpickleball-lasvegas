@@ -1,0 +1,28 @@
+@import "tailwindcss";
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+#root { width: 100%; }
+
+:root, [data-theme="dark"] {
+  --page-bg:    #07101c;
+  --page-bg2:   #0d1829;
+  --header-bg:  rgba(7,16,28,0.92);
+  --card-bg:    rgba(255,255,255,0.05);
+  --text:       #ffffff;
+  --text-muted: rgba(255,255,255,0.60);
+  --text-dim:   rgba(255,255,255,0.28);
+  --border:     rgba(255,255,255,0.10);
+  --acc:        #F5891F;
+}
+[data-theme="light"] {
+  --page-bg:    #f0f4ff;
+  --page-bg2:   #ffffff;
+  --header-bg:  rgba(240,244,255,0.94);
+  --card-bg:    rgba(255,255,255,0.90);
+  --text:       #0a1528;
+  --text-muted: #4a5a7a;
+  --text-dim:   #9aaccf;
+  --border:     rgba(0,0,0,0.09);
+  --acc:        #d97706;
+}
+* { transition: background-color .25s, border-color .25s, color .25s; }
