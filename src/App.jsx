@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Building2, CalendarDays, Camera, CheckCircle2, ChevronRight,
   Globe2, Handshake, HeartPulse, MapPin, Moon, Network,
-  PlayCircle, RadioTower, ShieldCheck, Sparkles, Sun,
+  PlayCircle, RadioTower, ShieldCheck, Sparkles, Sun, Trophy,
   Users, WalletCards,
 } from "lucide-react";
 import "./index.css";
@@ -33,6 +33,7 @@ function ThemeToggle({ dark, setDark }) {
 
 /* ── helpers ── */
 const fade = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: .6, ease: "easeOut" } } };
+const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" } } };
 const stagger = { hidden: {}, show: { transition: { staggerChildren: .08 } } };
 
 function SLabel({ children }) {
@@ -55,6 +56,49 @@ function Pill({ children }) {
 }
 
 /* ── data ── */
+const consumerTabs = [
+  {
+    key: "play",
+    label: "Play",
+    headline: "Open play, quick games, and high-energy court time.",
+    text: "Step onto the court at Rainbow & Sahara for daily pickleball action built for beginners, competitors, locals, tourists, and everyone ready to move.",
+    cta: "Book Court Time",
+    image: "https://images.unsplash.com/photo-1647891948443-4f7724ffec71?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    key: "corporate",
+    label: "Corporate",
+    headline: "Turn team-building into something people actually talk about.",
+    text: "Bring your company, convention group, sales team, leadership retreat, or client event into a fast, social, broadcast-ready pickleball experience.",
+    cta: "Plan Corporate Event",
+    image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    key: "leagues",
+    label: "Leagues",
+    headline: "Join the ladder. Build your ranking. Chase the finals.",
+    text: "Local play feeds leagues, regional qualifiers, national tournaments, and the future Las Vegas Mr. Pickleball Finals.",
+    cta: "Join League Waitlist",
+    image: "https://images.unsplash.com/photo-1647891948431-60e34c0202a1?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    key: "events",
+    label: "Events",
+    headline: "Birthdays, brand activations, watch parties, and private court takeovers.",
+    text: "From weekend fun to sponsor-backed experiences, the branch is built for groups that want energy, music, content, and unforgettable play.",
+    cta: "Request Event Package",
+    image: "https://images.unsplash.com/photo-1571019613914-85f342c6a11e?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    key: "watch",
+    label: "Watch",
+    headline: "Your match can become the moment everyone sees.",
+    text: "The Mr. Pickleball Network turns local matches, corporate challenges, and tournament play into streamable, replayable, sponsor-ready content.",
+    cta: "Explore Network",
+    image: "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1200&q=80",
+  },
+];
+
 const fiveInOne = [
   { title: "Convention",  Icon: Building2,    text: "Corporate team-building tournaments, executive networking matches, hospitality add-ons, and broadcast-ready participation experiences." },
   { title: "Tradeshow",   Icon: Handshake,    text: "Vendor-branded courts, product demonstrations, sponsored matches, and experiential booth extensions that keep attendees engaged." },
@@ -157,6 +201,8 @@ function BookingForm() {
 export default function App() {
   const [dark, setDark] = useTheme();
   const [selectedMarket, setSelectedMarket] = useState("Las Vegas");
+  const [activeTab, setActiveTab] = useState("play");
+  const activeConsumerTab = consumerTabs.find(t => t.key === activeTab) || consumerTabs[0];
 
   const selectedNote = useMemo(() => {
     if (selectedMarket === "Las Vegas")
@@ -182,10 +228,10 @@ export default function App() {
               onError={e => e.target.style.display = "none"} />
           </div>
           <nav className="hidden items-center gap-6 text-sm md:flex" style={{ color: "var(--text-muted)" }}>
-            <a href="#courts"    className="hover:opacity-80 transition">Courts</a>
-            <a href="#five-in-1" className="hover:opacity-80 transition">Platform</a>
-            <a href="#expansion" className="hover:opacity-80 transition">Regions</a>
-            <a href="#contact"   className="hover:opacity-80 transition">Visit</a>
+            <a href="#play"       className="hover:opacity-80 transition">Play</a>
+            <a href="#five-in-1"  className="hover:opacity-80 transition">Platform</a>
+            <a href="#expansion"  className="hover:opacity-80 transition">Regions</a>
+            <a href="#contact"    className="hover:opacity-80 transition">Visit</a>
           </nav>
           <div className="flex items-center gap-3">
             <ThemeToggle dark={dark} setDark={setDark} />
@@ -200,7 +246,131 @@ export default function App() {
 
       <div className="relative" style={{ zIndex: 1 }}>
 
-        {/* HERO */}
+        {/* ── CONSUMER HERO ── */}
+        <section id="play" className="relative overflow-hidden">
+          <div className="mx-auto max-w-7xl px-6 pb-10 pt-14 lg:px-8">
+            <motion.div initial="hidden" animate="show" variants={stagger}
+              className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+
+              <motion.div variants={fadeUp}>
+                <div className="mb-5 flex flex-wrap gap-2">
+                  <Pill>Las Vegas Pickleball</Pill>
+                  <Pill>Open Play</Pill>
+                  <Pill>Corporate Events</Pill>
+                  <Pill>Leagues + Tournaments</Pill>
+                </div>
+                <h1 className="max-w-4xl text-6xl font-black tracking-tight md:text-8xl"
+                  style={{ color: "var(--text)" }}>
+                  Play loud. Move fast. Own the court.
+                </h1>
+                <p className="mt-6 max-w-2xl text-xl leading-8" style={{ color: "var(--text-muted)" }}>
+                  Welcome to Mr. Pickleball Las Vegas — the high-energy court experience at Rainbow &amp; Sahara built for players, parties, companies, creators, and the next generation of pickleball culture.
+                </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <a href="#contact"
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl px-7 py-4 font-black text-sm transition hover:opacity-90"
+                    style={{ background: "var(--acc)", color: "#07101c" }}>
+                    Book / Visit Today <ChevronRight className="h-4 w-4" />
+                  </a>
+                  <a href="#consumer-tabs"
+                    className="inline-flex items-center justify-center gap-2 rounded-2xl border px-7 py-4 font-semibold text-sm transition hover:opacity-80"
+                    style={{ borderColor: "var(--border)", color: "var(--text)" }}>
+                    Explore Experiences
+                  </a>
+                </div>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="grid grid-cols-2 gap-4">
+                <div className="h-72 overflow-hidden rounded-[2rem] border md:h-96"
+                  style={{ borderColor: "var(--border)", background: "var(--card-bg)" }}>
+                  <img
+                    src="https://images.unsplash.com/photo-1647891948443-4f7724ffec71?auto=format&fit=crop&w=900&q=80"
+                    alt="Pickleball player hitting ball"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="mt-10 h-72 overflow-hidden rounded-[2rem] border md:h-96"
+                  style={{ borderColor: "var(--border)", background: "var(--card-bg)" }}>
+                  <img
+                    src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=900&q=80"
+                    alt="Pickleball court action"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* CONSUMER TABS */}
+          <section id="consumer-tabs" className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+            <div className="rounded-[2.5rem] border p-4 shadow-2xl backdrop-blur md:p-6"
+              style={{ borderColor: "var(--border)", background: "var(--card-bg)" }}>
+
+              {/* Tab bar */}
+              <div className="flex gap-2 overflow-x-auto pb-3">
+                {consumerTabs.map(tab => (
+                  <button
+                    key={tab.key}
+                    onClick={() => setActiveTab(tab.key)}
+                    className="shrink-0 rounded-2xl px-5 py-3 text-sm font-semibold transition"
+                    style={activeTab === tab.key
+                      ? { background: "var(--acc)", color: "#07101c" }
+                      : { background: "var(--page-bg)", color: "var(--text-muted)" }}>
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Tab content */}
+              <div className="grid gap-6 pt-3 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
+                <div className="rounded-[2rem] p-7 md:p-9" style={{ background: "var(--page-bg)" }}>
+                  <div className="mb-4 inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em]"
+                    style={{ background: `${ACC}15`, color: "var(--acc)" }}>
+                    {activeConsumerTab.label} Experience
+                  </div>
+                  <h2 className="text-4xl font-black tracking-tight md:text-5xl" style={{ color: "var(--text)" }}>
+                    {activeConsumerTab.headline}
+                  </h2>
+                  <p className="mt-5 text-lg leading-8" style={{ color: "var(--text-muted)" }}>
+                    {activeConsumerTab.text}
+                  </p>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <a href="#contact"
+                      className="inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-4 font-black text-sm transition hover:opacity-90"
+                      style={{ background: "var(--acc)", color: "#07101c" }}>
+                      {activeConsumerTab.cta}
+                    </a>
+                    <a href="tel:17752398383"
+                      className="inline-flex items-center justify-center gap-2 rounded-2xl border px-6 py-4 font-semibold text-sm transition hover:opacity-80"
+                      style={{ borderColor: "var(--border)", color: "var(--text)" }}>
+                      Call 775-239-8383
+                    </a>
+                  </div>
+                </div>
+
+                <div className="relative min-h-[380px] overflow-hidden rounded-[2rem] border"
+                  style={{ borderColor: "var(--border)" }}>
+                  <img
+                    src={activeConsumerTab.image}
+                    alt={`${activeConsumerTab.label} pickleball experience`}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6 grid gap-3 sm:grid-cols-3">
+                    {["Open 6am–10pm", "Rainbow + Sahara", "Vegas Energy"].map(item => (
+                      <div key={item}
+                        className="rounded-2xl border border-white/15 bg-black/45 p-4 text-sm font-semibold text-white backdrop-blur">
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        {/* ── PLATFORM HERO ── */}
         <section className="relative overflow-hidden">
           <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-24 pt-16 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pb-32 lg:pt-20">
             <motion.div initial="hidden" animate="show" variants={stagger}>
