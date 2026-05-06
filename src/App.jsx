@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Building2, CalendarDays, Camera, CheckCircle2, ChevronRight,
   Globe2, Handshake, HeartPulse, MapPin, Moon, Network,
-  PlayCircle, RadioTower, ShieldCheck, Sparkles, Sun, Trophy,
+  PlayCircle, RadioTower, ShieldCheck, Sparkles, Sun,
   Users, WalletCards,
 } from "lucide-react";
 import "./index.css";
@@ -178,14 +178,8 @@ export default function App() {
         style={{ background: "var(--header-bg)", borderColor: "var(--border)" }}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 h-20 lg:px-8">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl border"
-              style={{ borderColor: "var(--border)", background: "var(--card-bg)" }}>
-              <Trophy className="h-5 w-5" style={{ color: "var(--acc)" }} />
-            </div>
-            <div>
-              <div className="text-sm font-black tracking-wide" style={{ color: "var(--text)" }}>MR. PICKLEBALL</div>
-              <div className="text-xs" style={{ color: "var(--text-muted)" }}>Las Vegas Branch</div>
-            </div>
+            <img src="/mrp-logo.png" alt="Mr. Pickleball Indoor" className="h-14 object-contain"
+              onError={e => e.target.style.display = "none"} />
           </div>
           <nav className="hidden items-center gap-6 text-sm md:flex" style={{ color: "var(--text-muted)" }}>
             <a href="#courts"    className="hover:opacity-80 transition">Courts</a>
