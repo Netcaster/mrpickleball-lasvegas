@@ -63,7 +63,7 @@ const consumerTabs = [
     headline: "Open play, quick games, and high-energy court time.",
     text: "Step onto the court at Rainbow & Sahara for daily pickleball action built for beginners, competitors, locals, tourists, and everyone ready to move.",
     cta: "Book Court Time",
-    image: "https://images.pexels.com/photos/9985031/pexels-photo-9985031.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/pickleball-court.jpg",
   },
   {
     key: "corporate",
@@ -71,7 +71,7 @@ const consumerTabs = [
     headline: "Turn team-building into something people actually talk about.",
     text: "Bring your company, convention group, sales team, leadership retreat, or client event into a fast, social, broadcast-ready pickleball experience.",
     cta: "Plan Corporate Event",
-    image: "https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=1200&q=80",
+    image: "/pickleball-court.jpg",
   },
   {
     key: "leagues",
@@ -79,7 +79,7 @@ const consumerTabs = [
     headline: "Join the ladder. Build your ranking. Chase the finals.",
     text: "Local play feeds leagues, regional qualifiers, national tournaments, and the future Las Vegas Mr. Pickleball Finals.",
     cta: "Join League Waitlist",
-    image: "https://images.pexels.com/photos/9984897/pexels-photo-9984897.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/pickleball-court.jpg",
   },
   {
     key: "events",
@@ -87,7 +87,7 @@ const consumerTabs = [
     headline: "Birthdays, brand activations, watch parties, and private court takeovers.",
     text: "From weekend fun to sponsor-backed experiences, the branch is built for groups that want energy, music, content, and unforgettable play.",
     cta: "Request Event Package",
-    image: "https://images.unsplash.com/photo-1571019613914-85f342c6a11e?auto=format&fit=crop&w=1200&q=80",
+    image: "/pickleball-court.jpg",
   },
   {
     key: "watch",
@@ -95,7 +95,7 @@ const consumerTabs = [
     headline: "Your match can become the moment everyone sees.",
     text: "The Mr. Pickleball Network turns local matches, corporate challenges, and tournament play into streamable, replayable, sponsor-ready content.",
     cta: "Explore Network",
-    image: "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?auto=format&fit=crop&w=1200&q=80",
+    image: "/pickleball-court.jpg",
   },
 ];
 
@@ -284,7 +284,7 @@ export default function App() {
                 <div className="h-72 overflow-hidden rounded-[2rem] border md:h-96"
                   style={{ borderColor: "var(--border)", background: "var(--card-bg)" }}>
                   <img
-                    src="https://images.pexels.com/photos/9985031/pexels-photo-9985031.jpeg?auto=compress&cs=tinysrgb&w=900"
+                    src="/pickleball-court.jpg"
                     alt="Pickleball player hitting ball"
                     className="h-full w-full object-cover"
                   />
