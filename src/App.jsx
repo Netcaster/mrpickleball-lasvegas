@@ -79,7 +79,7 @@ const consumerTabs = [
     headline: "Join the ladder. Build your ranking. Chase the finals.",
     text: "Local play feeds leagues, regional qualifiers, national tournaments, and the future Las Vegas Mr. Pickleball Finals.",
     cta: "Join League Waitlist",
-    image: "https://images.unsplash.com/photo-1647891948431-60e34c0202a1?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/9984897/pexels-photo-9984897.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
   {
     key: "events",
