@@ -284,7 +284,7 @@ export default function App() {
                 <div className="h-72 overflow-hidden rounded-[2rem] border md:h-96"
                   style={{ borderColor: "var(--border)", background: "var(--card-bg)" }}>
                   <img
-                    src="https://images.pexels.com/photos/9985031/pexels-photo-9985031.jpeg?auto=compress&cs=tinysrgb&w=900"
+                    src="https://images.unsplash.com/photo-1647891948443-4f7724ffec71?auto=format&fit=crop&w=900&q=80"
                     alt="Pickleball player hitting ball"
                     className="h-full w-full object-cover"
                   />
@@ -292,7 +292,7 @@ export default function App() {
                 <div className="mt-10 h-72 overflow-hidden rounded-[2rem] border md:h-96"
                   style={{ borderColor: "var(--border)", background: "var(--card-bg)" }}>
                   <img
-                    src="https://images.pexels.com/photos/9984907/pexels-photo-9984907.jpeg?auto=compress&cs=tinysrgb&w=900"
+                    src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=900&q=80"
                     alt="Pickleball court action"
                     className="h-full w-full object-cover"
                   />
