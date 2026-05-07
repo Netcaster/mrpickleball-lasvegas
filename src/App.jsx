@@ -63,7 +63,7 @@ const consumerTabs = [
     headline: "Open play, quick games, and high-energy court time.",
     text: "Step onto the court at Rainbow & Sahara for daily pickleball action built for beginners, competitors, locals, tourists, and everyone ready to move.",
     cta: "Book Court Time",
-    image: "https://images.unsplash.com/photo-1647891948443-4f7724ffec71?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.pexels.com/photos/9985031/pexels-photo-9985031.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
   {
     key: "corporate",
@@ -284,7 +284,7 @@ export default function App() {
                 <div className="h-72 overflow-hidden rounded-[2rem] border md:h-96"
                   style={{ borderColor: "var(--border)", background: "var(--card-bg)" }}>
                   <img
-                    src="https://images.unsplash.com/photo-1647891948443-4f7724ffec71?auto=format&fit=crop&w=900&q=80"
+                    src="https://images.pexels.com/photos/9985031/pexels-photo-9985031.jpeg?auto=compress&cs=tinysrgb&w=900"
                     alt="Pickleball player hitting ball"
                     className="h-full w-full object-cover"
                   />
