@@ -1,5 +1,5 @@
 @import "tailwindcss";
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body { margin: 0; }
 #root { width: 100%; }
 

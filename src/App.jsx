@@ -63,7 +63,7 @@ const consumerTabs = [
     headline: "Open play, quick games, and high-energy court time.",
     text: "Step onto the court at Rainbow & Sahara for daily pickleball action built for beginners, competitors, locals, tourists, and everyone ready to move.",
     cta: "Book Court Time",
-    image: "/pickleball-court.jpg",
+    image: "/pickleball-court2.jpg",
   },
   {
     key: "corporate",
@@ -79,7 +79,7 @@ const consumerTabs = [
     headline: "Join the ladder. Build your ranking. Chase the finals.",
     text: "Local play feeds leagues, regional qualifiers, national tournaments, and the future Las Vegas Mr. Pickleball Finals.",
     cta: "Join League Waitlist",
-    image: "/pickleball-court.jpg",
+    image: "/pickleball-court2.jpg",
   },
   {
     key: "events",
@@ -95,7 +95,7 @@ const consumerTabs = [
     headline: "Your match can become the moment everyone sees.",
     text: "The Mr. Pickleball Network turns local matches, corporate challenges, and tournament play into streamable, replayable, sponsor-ready content.",
     cta: "Explore Network",
-    image: "/pickleball-court.jpg",
+    image: "/pickleball-court2.jpg",
   },
 ];
 
@@ -284,7 +284,7 @@ export default function App() {
                 <div className="h-72 overflow-hidden rounded-[2rem] border md:h-96"
                   style={{ borderColor: "var(--border)", background: "var(--card-bg)" }}>
                   <img
-                    src="/pickleball-court.jpg"
+                    src="/pickleball-court2.jpg"
                     alt="Pickleball player hitting ball"
                     className="h-full w-full object-cover"
                   />
